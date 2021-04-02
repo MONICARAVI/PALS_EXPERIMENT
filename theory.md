@@ -6,3 +6,6 @@
 ## Cathode Ray Oscilloscope - CRO:
   CRO which stands for Cathode Ray Oscilloscope is an electronic instrument used to visualize waveforms. In the early days, it is also called an oscillograph. The instrument has four sections namely display, x-axis controls, y-axis controls and triggers. CRO is mainly used to analyse the properties of the waveforms.  
   
+## Sine wave:
+
+## Cosine wave:
