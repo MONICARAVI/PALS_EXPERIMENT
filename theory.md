@@ -16,9 +16,14 @@
 ## Sine wave:
 	Sine wave is a periodic wave defined by the function 
 *y = sin(x)*
-	
+
+![sine wave](/images/sine_periodic.jpg) 	
 ## Cosine wave:
 	Cosine wave is also a periodic wave defined by a function 
 *y=cos(x)*
 
-
+![sine wave](/images/sine_periodic.jpg) 
+## Square wave:
+	Square wave also called pulse wave is a periodic waveform having equal positive and negative pulse width generally called as 50% duty cycle.
+	
+![square wave](/images/square.jpg)
