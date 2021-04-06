@@ -16,3 +16,7 @@
 	2. Waveform
 	3. Amplitude
 	4. Voltage 
+5. The selected waveform in a function generator is available at
+	1. VCO output
+	2. Output Jack
+	3. Function selector
