@@ -22,7 +22,7 @@
 	Cosine wave is also a periodic wave defined by a function 
 *y=cos(x)*
 
-![sine wave](/images/sine_periodic.jpg) 
+![cosine wave](https://i0.wp.com/www.differencebetween.info/sites/default/files/images/5/cosinewave.jpg) 
 ## Square wave:
 	Square wave also called pulse wave is a periodic waveform having equal positive and negative pulse width generally called as 
 	50% duty cycle.
