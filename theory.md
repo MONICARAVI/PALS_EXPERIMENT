@@ -3,7 +3,7 @@
 ## Function Generator:
   Function Generator is an instrument that can generate common waveforms like triangle, sine, cosine, square, sawtooth, etc., 
   It also provides options for changing the characteristics of the waveforms such as amplitude and frequency.
-  It is usually connected with CRO for visualising the waves generated.
+  The wave generated is available at the output jack. It can be visualised by connecting it to the CRO.
   
 ![Image of Function generator](https://5.imimg.com/data5/JL/JW/RR/SELLER-739755/3-mhz-function-generator-counter-500x500.jpg)
 
@@ -24,7 +24,7 @@
 
 ![cosine wave](https://i0.wp.com/www.differencebetween.info/sites/default/files/images/5/cosinewave.jpg) 
 ## Square wave:
-	Square wave also called pulse wave is a periodic waveform having equal positive and negative pulse width generally called as 
-	50% duty cycle.
+	Square wave also called pulse wave is a periodic waveform having equal positive and negative pulse width 
+	generally called as 50% duty cycle.
 	
 ![square wave](/images/square.jpg)
