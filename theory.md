@@ -5,13 +5,13 @@
   It also provides options for changing the characteristics of the waveforms such as amplitude and frequency.
   The wave generated is available at the output jack. It can be visualised by connecting it to the CRO.
   
-![Image of Function generator](/images/functiongenerator.png)
+![Image of Function generator](/images/functiongenerator.PNG)
 
 ## Cathode Ray Oscilloscope - CRO:
   CRO which stands for Cathode Ray Oscilloscope is an electronic instrument used to visualize waveforms.
   In the early days, it is also called an oscillograph. The instrument has four sections namely display, x-axis controls, y-axis controls and triggers.
   CRO is mainly used to analyse the properties of the waveforms.  
-![Image of CRO](/images/cro.png) 
+![Image of CRO](/images/cro.PNG) 
 
 ## Sine wave:
 	Sine wave is a periodic wave defined by the function 
