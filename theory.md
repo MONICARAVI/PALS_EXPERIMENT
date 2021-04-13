@@ -5,13 +5,13 @@
   It also provides options for changing the characteristics of the waveforms such as amplitude and frequency.
   The wave generated is available at the output jack. It can be visualised by connecting it to the CRO.
   
-![Image of Function generator](https://5.imimg.com/data5/JL/JW/RR/SELLER-739755/3-mhz-function-generator-counter-500x500.jpg)
+![Image of Function generator](/images/functiongenerator.png)
 
 ## Cathode Ray Oscilloscope - CRO:
   CRO which stands for Cathode Ray Oscilloscope is an electronic instrument used to visualize waveforms.
   In the early days, it is also called an oscillograph. The instrument has four sections namely display, x-axis controls, y-axis controls and triggers.
   CRO is mainly used to analyse the properties of the waveforms.  
-![Image of CRO](https://images-na.ssl-images-amazon.com/images/I/81QnfVBWAnL._SL1500_.jpg) 
+![Image of CRO](/images/cro.png) 
 
 ## Sine wave:
 	Sine wave is a periodic wave defined by the function 
@@ -22,7 +22,7 @@
 	Cosine wave is also a periodic wave defined by a function 
 *y=cos(x)*
 
-![cosine wave](https://i0.wp.com/www.differencebetween.info/sites/default/files/images/5/cosinewave.jpg) 
+![cosine wave](/images/cos.png) 
 ## Square wave:
 	Square wave also called pulse wave is a periodic waveform having equal positive and negative pulse width 
 	generally called as 50% duty cycle.
