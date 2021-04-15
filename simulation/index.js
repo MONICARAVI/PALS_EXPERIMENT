@@ -6,7 +6,7 @@ var c = canvas.getContext('2d');
 // ----------------------------------------------------------------------
 //Initiating the global values
 var frequency = Number(5)
-var time_period = Number(5);
+// var time_period = Number(5);
 var y_pos = Number(0);
 var amp = Number(30);
 var x_pos = Number(0);
@@ -71,11 +71,11 @@ function plotfunc() {
   for (i = x_pos; i < 2000; i++) {
     if (signal_no == 1) {
       // y = ((canvas.height / 2 -10) + ((Math.sin((i - x_pos) * x_div * frequency)) * (-amp)*y_div) - (y_pos * 1));
-      y = ((canvas.height / 2 - 10) + ((Math.sin(((i) - x_pos) * frequency * x_div * 0.001)) * (-amp) * (y_div)) - (y_pos * 1));
+      y = ((canvas.height / 2 - 10) + ((Math.sin(((i) - x_pos) * frequency * x_div * 0.01)) * (-amp) * (y_div)) - (y_pos * 1));
     } else if (signal_no == 2) {
       // y = ((canvas.height / 2 - 10) + ((Math.cos((i - x_pos) * 0.01
       // * frequency)) * (-amp)) - (y_pos * 1));
-      y = ((canvas.height / 2 - 10) + ((Math.cos(((i) - x_pos) * frequency * x_div * 0.001)) * (-amp) * (y_div)) - (y_pos * 1));
+      y = ((canvas.height / 2 - 10) + ((Math.cos(((i) - x_pos) * frequency * x_div * 0.01)) * (-amp) * (y_div)) - (y_pos * 1));
     } else if (signal_no == 3) {
       // y = ((canvas.height / 2-10) +((-2*amp)/pi)*(Math.atan((1/(Math.tan(pi*(i - x_pos) *(frequency))) )))-(y_pos * 1));
       y = ((canvas.height / 2 - 10) + ((-2 * amp * y_div) / pi) * (Math.atan((1 / (Math.tan(pi * (i - x_pos) * (frequency) * x_div))))) - (y_pos * 1));
@@ -109,7 +109,7 @@ function plot_condn() {
 //Time period-------------------------------------------------------------------
 function timeperiod() {
   if (on == 1 && on_fg == 1) {
-    time_period = Number(document.getElementById("time_division").value) * 10;
+    time_period = Number(document.getElementById("time_division").value) ;
     x_div = time_period;
     plot_condn();
     result();
@@ -311,7 +311,7 @@ function amplitude() {
 function freq() {
   if (on_fg == 1) {
     freq_disp = Number(document.getElementById("frequency").value);
-    frequency = 1 / freq_disp;
+    frequency = freq_disp;
     display_fg();
   }
   if (on == 1) {
@@ -383,7 +383,6 @@ function tour() {
   dialog.show();
 }
 
-//display the results
 function result() {
   if (on == 1 && on_fg == 1 && connect == 1) {
     document.getElementById("ptop_voltage_result").textContent = ":" + amp * 2;
