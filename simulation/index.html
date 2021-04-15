@@ -17,6 +17,8 @@
       <!-- CRO -->
       <!-- CRO graph -->
       <canvas id="canvas"></canvas>
+      <!-- MEASUREMENT guide -->
+       <button type="button" class="btn btn-info button measurement" onclick="measurement_guide()">How to measure?</button>
       <!-- cro device  -->
       <canvas id="cro_canvas"></canvas>
       <!-- ON-OFF -->
@@ -49,14 +51,21 @@
         <label for="">Time Division</label><br>
         <select class="time_division_input" id="time_division" onchange="timeperiod()">
           <option value="1">1 s</option>
-          <option value="0.5">0.5 s</option>
-          <option value="0.2">0.2 s</option>
-          <option value="0.05">50 ms</option>
-          <option value="0.02">20 ms</option>
-          <option value="0.01">10 ms</option>
+          <option value="0.0001">0.1 ms</option>
+          <option value="0.0002">0.2 ms</option>
+          <option value="0.0005">0.5 ms</option>
           <option value="0.001">1 ms</option>
           <option value="0.002">2 ms</option>
           <option value="0.005">5 ms</option>
+          <option value="0.05">50 ms</option>
+          <option value="0.02">20 ms</option>
+          <option value="0.01">10 ms</option>
+          <option value="0.000001">1 µs</option>
+          <option value="0.000002">2 µs</option>
+          <option value="0.000005">5 µs</option>
+          <option value="0.00001">10 µs</option>
+          <option value="0.00002">20 µs</option>
+          <option value="0.00005">50 µs</option>
         </select>
       </div>
       <!-- Y-Division -->
@@ -167,7 +176,6 @@
       <dialog id="xy_cro_demo" class="demo">
         <img class="demo_img" src="images/up_arrow.png" alt="">
         <p>Toggle the switch to view the signal as vertical line to calculate the amplitude</p>
-
       </dialog>
       <!-- on the focus switch -->
       <dialog id="focus_cro_demo" class="demo">
@@ -188,12 +196,19 @@
         <table>
           <tr>
             <td>
+              <p class="result_p">Time Period(s) </p>
+            </td>
+            <td>
+              <p id="timeperiod_result" class="result_p"></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <p class="result_p">Peak-to-Peak Voltage(V) </p>
             </td>
             <td>
               <p id="ptop_voltage_result" class="result_p"></p>
             </td>
-            <!-- <td></td> -->
           </tr>
           <tr>
             <td>
