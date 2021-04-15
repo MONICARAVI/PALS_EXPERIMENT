@@ -256,11 +256,12 @@ h3{
   left:380px;
 }
 #remove_wire_demo{
-  top:100px;
-  left:1100px;
-  width:150px;
-  height:250px;
+  top:30px;
+  left:1050px;
+  width:180px;
+  height:300px;
 }
+
 .tour{
   position: absolute;
   top:350px;
