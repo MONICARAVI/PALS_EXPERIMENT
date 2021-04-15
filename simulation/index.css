@@ -1,16 +1,16 @@
 body{
-margin:20px;
-}
-
+margin:20px;}
 h5,.on_off,.focus,.xy{
-margin-left:20px;
-}
-
+margin-left:20px;}
 input[type=number],.time_division_input,.ydivision_input,.signal{
   width:70px;
-/* margin-left:20px; */
-  border-radius:10px;
-}
+  border-radius:10px;}
+h3{
+  color:white;
+  background-color:#0d5ba3;
+  text-align:center;
+  padding:4px;
+  margin:0px;}
 
 /* CRO CSS */
 /* Graph canva */
@@ -26,6 +26,7 @@ height:150px;
 right:100px;
 background-color: rgba(0,255,0,0.1);
 }
+
 /* CRO Device Canvas */
 #cro_canvas{
   border:2px solid black;
@@ -37,46 +38,23 @@ background-color: rgba(0,255,0,0.1);
   width:450px;
   height:260px;
   right:100px;
-  background-color:grey;
-}
-.on_off{
-  position:absolute;
-  top:265px;
-  left:200px;
-}
-.xy{
-  position: absolute;
-  top:265px;
-  left:310px;
-}
-.focus{
-  position: absolute;
-  top:265px;
-  left:390px;
-}
-.xposition{
-  position: absolute;
-  top:100px;
-  left:520px;
+  background-color:grey;}
 
-}
-.time_division{
+/* //cro button canvas */
+.on_off,.xy,.focus{
   position: absolute;
-  top:150px;
-  left:520px;
-  text-align: center;
-}
-.yposition{
-  position: absolute;
-  top:220px;
-  left:520px;
-}
-.y_division{
-  position: absolute;
-  top:270px;
-  left:520px;
-  text-align: center;
-}
+  top:265px;}
+.on_off{left:200px;}
+.xy{  left:310px;}
+.focus{left:390px;}
+.xposition,.time_division,.y_division,.yposition{
+    position: absolute;
+    left:520px;}
+.xposition{  top:100px;}
+.time_division{top:150px;}
+.yposition{top:220px;}
+.y_division{top:270px;text-align: center;}
+
 /* Button */
 .button {
   padding: 15px 25px;
@@ -88,20 +66,19 @@ background-color: rgba(0,255,0,0.1);
   border: none;
   border-radius: 15px;
   box-shadow: 0 5px #999;
-  position: absolute;
-}
+  position: absolute;}
 .button:active {
   box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
+  transform: translateY(4px);}
+
+/* //Wire CSS */
 .connect{
   top:350px;
-  left:1000px;
-}
+  left:1000px;}
 .remove{
   top:350px;
-  left:1100px;
-}
+  left:1100px;}
+
 /* Function Generator Canva */
 #fg_canvas{
   border:2px solid black;
@@ -110,83 +87,43 @@ background-color: rgba(0,255,0,0.1);
   position:absolute;
   top:100px;
   left:700px;
-  background-color:grey;
-}
+  background-color:grey;}
 #display_canvas{
   position:absolute;
   top:120px;
   left:720px;
   background-color:rgba(0,255,0,0.1);
   border:2px solid black;
-  z-index:-1;
-}
-.amplitude_fg{
+  z-index:-1;}
+.amplitude_fg,.signal_class,.frequency_fg{
   position:absolute;
-  top:180px;
-  left:940px;
-}
-.signal_class{
-  position:absolute;
-  top:180px;
-  left:720px;
-}
-.frequency_fg{
-  position:absolute;
-  top:180px;
-  left:820px;
-}
+  top:180px;}
+.amplitude_fg{left:940px;}
+.signal_class{left:720px;}
+.frequency_fg{left:820px;}
 .on_off_fg{
   position:absolute;
   top:120px;
-  left:950px;
-}
+  left:950px;}
 .outer_window{
   width:1275px;
   height:600px;
   border:2px solid black;
-  z-index:-3;
-/* //  background-color:#28527a; */
-}
+  z-index:-3;}
 
 .stimulation_window{
   width:1275px;
-  height:400px;
-  /* border:2px solid black; */
-}
-.result{
-
-}
-h3{
-  color:white;
-  background-color:#0d5ba3;
-  text-align:center;
-  padding:4px;
-  margin:0px;
-}
-.result_heading{
-  display:inline-block;
-  width:200px;
-  margin:0;
-}
-.result_display{
-  border-top:2px dotted black;
-  margin:0;
-  background-color:#67a2d6;
-  height:155px;
-}
+  height:400px;}
 
 #wire{
   position: absolute;
   top:225px;
   left:310px;
-  z-index:-2;
-}
-
+  z-index:-2;}
 
 /* Demo//\\ */
 .demo_img{
-  float:left;
-}
+  float:left;}
 .demo{
   width:300px;
   height:150px;
@@ -194,80 +131,74 @@ h3{
   background-color:#67a2d6;
   border-radius: 5px;
   position:absolute;
-  margin:0px;
-}
-
+  margin:0px;}
 #connect_demo{
   top:170px;
-  left:950px;
-}
+  left:950px;}
 #onoff_cro_demo{
    top:110px;
-   left:180px;
- }
+   left:180px;}
 #onoff_fg_demo{
   width:250px;
   height:150px;
   top:20px;
-  left:1000px;
-}
+  left:1000px;}
 #amplitude_fg_demo{
   top:60px;
-  left:900px;
-}
+  left:900px;}
 #signal_select_demo{
   top:60px;
-  left:700px;
-}
+  left:700px;}
 #frequency_fg_demo{
   top:60px;
-  left:800px;
-}
+  left:800px;}
 #xposition_cro_demo{
   width:250px;
   height:150px;
   top:20px;
-  left:600px;
-}
+  left:600px;}
 #xdivision_cro_demo{
   width:250px;
   height:150px;
   top:70px;
-  left:600px;
-}
+  left:600px;}
 #yposition_cro_demo{
   width:250px;
   height:150px;
   top:130px;
-  left:600px;
-}
+  left:600px;}
 #ydivision_cro_demo{
   width:250px;
   height:150px;
   top:160px;
-  left:600px;
-}
+  left:600px;}
 #xy_cro_demo{
   top:300px;
-  left:300px;
-}
+  left:300px;}
 #focus_cro_demo{
   top:300px;
-  left:380px;
-}
+  left:380px;}
 #remove_wire_demo{
   top:30px;
   left:1050px;
   width:180px;
-  height:300px;
-}
-
+  height:300px;}
+/* Tour button */
 .tour{
   position: absolute;
   top:350px;
-  left:1200px;
-}
+  left:1200px;}
 
+/* //Result section */
+.result_heading{
+  display:inline-block;
+  width:200px;
+  margin:0;}
+.result_display{
+  border-top:2px dotted black;
+  margin:0;
+  background-color:#67a2d6;
+  height:155px;}
 .result_p{
   display:inline-block;
   margin:3px;;
@@ -275,5 +206,4 @@ h3{
 .result_input{
   height:23px;
   outline-color: invert;
-  border-radius: 3px;
-}
+  border-radius: 3px;}
