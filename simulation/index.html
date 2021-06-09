@@ -18,7 +18,7 @@
       <!-- CRO graph -->
       <canvas id="canvas"></canvas>
       <!-- MEASUREMENT guide -->
-       <button type="button" class="btn btn-info button measurement" onclick="measurement_guide()">How to measure?</button>
+      <button type="button" class="btn btn-info button measurement" onclick="measurement_guide()">How to measure?</button>
       <!-- cro device  -->
       <canvas id="cro_canvas"></canvas>
       <!-- ON-OFF -->
@@ -29,7 +29,7 @@
       <!-- Y-Position -->
       <div class="yposition">
         <label for="time_period">Y position</label><br>
-        <input type="number" id="yposition" value="4" onchange="yposition()">
+        <input type="number" id="yposition" value="0" onchange="yposition()">
       </div>
       <!-- X-position -->
       <div class="xposition">
@@ -50,6 +50,7 @@
       <div class="time_division">
         <label for="">Time Division</label><br>
         <select class="time_division_input" id="time_division" onchange="timeperiod()">
+          <option value="0.001">1ms Default</option>
           <option value="1">1 s</option>
           <option value="0.0001">0.1 ms</option>
           <option value="0.0002">0.2 ms</option>
