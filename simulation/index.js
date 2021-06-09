@@ -12,12 +12,12 @@ var amp = Number(30);
 var x_pos = Number(0);
 var count = 1; //INITIALISING cro_BUTTON COUNT
 var xycount = 1; ///INITIALISING XY toggle BUTTON COUNT
-var focus_count = 1;  ///INITIALISING focus toggle BUTTON COUNT
+var focus_count = 1; ///INITIALISING focus toggle BUTTON COUNT
 var count_fg = 0; ///INITIALISING FG  toggle BUTTON COUNT
-var on = 0;  // cro on state
+var on = 0; // cro on state
 var xy_on = 0; // xy on state
 var focus = 0; //focus on state
-var on_fg = 0;  //Function generator on state
+var on_fg = 0; //Function generator on state
 var signal_no = 1;
 var connect = 0; //Connect button click count
 var tour_on = 0; //tour button click count
@@ -30,31 +30,31 @@ function plotAxes() {
   c.clearRect(0, 0, canvas.width, canvas.height);
   c.strokeStyle = "black";
   //vertical line and y-axis markings
-  for (var i = 0; i < 2000; i = i + 80) {
+  for (var i = 0; i < 2000; i = i + 50) {
     c.beginPath();
     c.moveTo(i, 0);
     c.lineTo(i, 600);
     c.stroke();
-    if (i == 560) {
-      for (var j = 0; j < canvas.height; j = j + 16) {
+    if (i == 500) {
+      for (var j = 0; j < canvas.height; j = j + 10) {
         c.beginPath();
-        c.moveTo(canvas.width / 2 - 30, j);
-        c.lineTo(canvas.width / 2 - 10, j);
+        c.moveTo(canvas.width / 2 - 8, j);
+        c.lineTo(canvas.width / 2 + 8, j);
         c.stroke();
       }
     }
   }
   //Horizontal line and x-axis markings
-  for (var i = 0; i < 1000; i = i + 80) {
+  for (var i = 0; i < 1000; i = i + 50) {
     c.beginPath();
     c.moveTo(0, i);
     c.lineTo(1500, i);
     c.stroke();
-    if (i == 320) {
-      for (var j = 0; j < canvas.width; j = j + 16) {
+    if (i == 250) {
+      for (var j = 0; j < canvas.width; j = j + 10) {
         c.beginPath();
-        c.moveTo(j, canvas.height / 2 - 20);
-        c.lineTo(j, canvas.height / 2);
+        c.moveTo(j, canvas.height / 2 - 8);
+        c.lineTo(j, canvas.height / 2 + 8);
         c.stroke();
       }
     }
@@ -65,26 +65,25 @@ function plotfunc() {
   plotAxes();
   c.strokeStyle = "blue";
   c.beginPath();
-  var y = (canvas.height / 2) - 10;
+  var y = (canvas.height / 2);
   c.moveTo(x_pos, y);
-  // for(var j=0;j<2;j++){
   for (i = x_pos; i < 2000; i++) {
     if (signal_no == 1) { //Sine wave
-      y = ((canvas.height / 2 - 10) + ((Math.sin(((i) - x_pos) * frequency * x_div * 6.4)) * (-amp) * (y_div)) - (y_pos * 1));
+      y = ((canvas.height / 2) + ((Math.sin(((i) - x_pos) * frequency * x_div * 6.4)) * (-amp) * (y_div)) - (y_pos * 1));
     } else if (signal_no == 2) { //Cos wave
-      y = ((canvas.height / 2 - 10) + ((Math.cos(((i) - x_pos) * frequency * x_div * 6.4)) * (-amp) * (y_div)) - (y_pos * 1));
+      y = ((canvas.height / 2) + ((Math.cos(((i) - x_pos) * frequency * x_div * 6.4)) * (-amp) * (y_div)) - (y_pos * 1));
     } else if (signal_no == 3) { //Sawtooth signal
-      y = ((canvas.height / 2 - 10) + ((-2 * amp * y_div) / pi) * (Math.atan((1 / (Math.tan(pi * (i - x_pos) * (frequency) * x_div))))) - (y_pos * 1));
+      y = ((canvas.height / 2) + ((-2 * amp * y_div) / pi) * (Math.atan((1 / (Math.tan(pi * (i - x_pos) * (frequency) * x_div))))) - (y_pos * 1));
     } else if (signal_no == 4) { //triangle signal
-      y = ((canvas.height / 2 - 10) + ((2 * (-amp * y_div)) / pi) * (Math.acos(((Math.cos(pi * (i - x_pos) * (2 * frequency) * x_div))))) - (y_pos * 1));
-    } else if (signal_no == 5)
-    { //Sqaure wave
-      y = ((canvas.height / 2 - 10) + Math.sign(((Math.sin(2 * pi * (i - x_pos)*1.03* frequency * x_div)) * (amp) * y_div)) * (amp * y_div * 1) - (y_pos * 1));
+      y = ((canvas.height / 2) + ((2 * (-amp * y_div)) / pi) * (Math.acos(((Math.cos(pi * (i - x_pos) * (2 * frequency) * x_div))))) - (y_pos * 1));
+    } else if (signal_no == 5) { //Sqaure wave
+      y = ((canvas.height / 2) + Math.sign(((Math.sin(2 * pi * (i - x_pos) * 1.03 * frequency * x_div)) * (amp) * y_div)) * (amp * y_div * 1) - (y_pos * 1));
     }
     c.lineTo(i, y);
   }
   c.stroke();
 }
+
 function plot_condn() {
   if (on == 1 && on_fg == 1 && connect == 1) {
     result();
@@ -103,11 +102,11 @@ function plot_condn() {
 //Time period-------------------------------------------------------------------
 function timeperiod() {
   if (on == 1 && on_fg == 1) {
-    time_period = Number(document.getElementById("time_division").value) ;
+    time_period = Number(document.getElementById("time_division").value);
     x_div = time_period;
     plot_condn();
   }
-  if (tour_on == 8) {//For demo purpose
+  if (tour_on == 8) { //For demo purpose
     dialog.close();
     dialog = document.getElementById('yposition_cro_demo');
     dialog.show();
@@ -120,7 +119,7 @@ function yposition() {
     y_pos = Number(document.getElementById("yposition").value);
     plot_condn();
   }
-  if (tour_on == 9) {//For demo purpose
+  if (tour_on == 9) { //For demo purpose
     dialog.close();
     dialog = document.getElementById('ydivision_cro_demo');
     dialog.show();
@@ -133,7 +132,7 @@ function xposition() {
     x_pos = Number(document.getElementById("xposition").value);
     plot_condn();
   }
-  if (tour_on == 7) {//For demo purpose
+  if (tour_on == 7) { //For demo purpose
     dialog.close();
     dialog = document.getElementById('xdivision_cro_demo');
     dialog.show();
@@ -146,7 +145,7 @@ function ydivision() {
     y_div = 1 / Number(document.getElementById("ydivision_input").value);
     plot_condn();
   }
-  if (tour_on == 10) {//For demo purpose
+  if (tour_on == 10) { //For demo purpose
     dialog.close();
     dialog = document.getElementById('xy_cro_demo');
     dialog.show();
@@ -182,8 +181,8 @@ function on_off_cro() {
 function plotLine() {
   plotAxes();
   c.strokeStyle = "black";
-  var ay = ((canvas.height / 2 - 5) - ((1) * (-amp) * (y_div)) - (y_pos * 1));
-  var y = ((canvas.height / 2 - 5) + ((1) * (-amp) * (y_div)) - (y_pos * 1));
+  var ay = ((canvas.height / 2) - ((1) * (-amp) * (y_div)) - (y_pos * 1));
+  var y = ((canvas.height / 2) + ((1) * (-amp) * (y_div)) - (y_pos * 1));
 
   c.beginPath();
   c.moveTo((canvas.width / 2) + x_pos - 20, ay);
@@ -191,6 +190,7 @@ function plotLine() {
   c.stroke();
 
 }
+
 function xy() {
   if (tour_on == 11) {
     dialog.close();
@@ -223,6 +223,7 @@ function plot_focus() {
   c.stroke();
   result();
 }
+
 function myfunc() {
   focus_count = focus_count + 1;
   if (focus_count % 2 == 0) {
@@ -253,6 +254,7 @@ function connect_wire() {
     tour_on = 2
   }
 }
+
 function remove_wire() {
   document.getElementById("wire").style.top = "225px";
   connect = 0;
@@ -276,6 +278,7 @@ function display_fg() {
   disp.fillText(amp + " V", 10, 45);
   disp.fillText(freq_disp + " Hz", 120, 45)
 }
+
 function amplitude() {
   if (on_fg == 1) {
     amp = Number(document.getElementById("amplitude").value);
@@ -293,6 +296,7 @@ function amplitude() {
     tour_on = 7;
   }
 }
+
 function freq() {
   if (on_fg == 1) {
     freq_disp = Number(document.getElementById("frequency").value);
@@ -310,13 +314,13 @@ function freq() {
     tour_on = 6;
   }
 }
+
 function on_off_fg() {
   if (count_fg % 2 == 0) {
     document.getElementById("display_canvas").style.backgroundColor = "rgba(0,255,0,0.6)"
     display_fg();
     on_fg = 1;
     plot_condn();
-    // if(on==1&&){window.requestAnimationFrame(plotSine_t);}
   } else {
     on_fg = 0;
     disp.clearRect(0, 0, canvas.width, canvas.height);
@@ -324,18 +328,17 @@ function on_off_fg() {
     document.getElementById("display_canvas").style.backgroundColor = "rgba(0,255,0,0.1)"
   }
   count_fg = count_fg + 1;
-  if (tour_on == 3) {//For demo purpose
+  if (tour_on == 3) { //For demo purpose
     dialog.close();
     dialog = document.getElementById('signal_select_demo');
     dialog.show();
     tour_on = 4
   }
 }
+
 function signal_selection() {
   if (on_fg == 1) {
     signal_no = document.getElementById("signal_select").value;
-    // if(signal_no==1){ func= "Sin";}
-    // else{func ="Cos";}
     if (signal_no == 1) {
       func = "Sin";
     } else if (signal_no == 2) {
@@ -366,15 +369,17 @@ function tour() {
   dialog = document.getElementById('connect_demo');
   dialog.show();
 }
+
 function result() {
   if (on == 1 && on_fg == 1 && connect == 1) {
-    document.getElementById("timeperiod_result").textContent=":"+(1/frequency)+"s"
-    document.getElementById("ptop_voltage_result").textContent = ":" + amp * 2+"V";
-    document.getElementById("rms_voltage_result").textContent = ":" + 0.7071 * amp+"V";
-    document.getElementById("average_volatge_result").textContent = ":" + 0.637 * amp+"V";
-    document.getElementById('peak_voltage_result').textContent = ":" + amp+"V";
+    document.getElementById("timeperiod_result").textContent = ":" + (1 / frequency) + "s"
+    document.getElementById("ptop_voltage_result").textContent = ":" + amp * 2 + "V";
+    document.getElementById("rms_voltage_result").textContent = ":" + 0.7071 * amp + "V";
+    document.getElementById("average_volatge_result").textContent = ":" + 0.637 * amp + "V";
+    document.getElementById('peak_voltage_result').textContent = ":" + amp + "V";
   }
 }
-function measurement_guide(){
-  alert("Each division in CRO is 16 units.After taking the reading from the display multiply with the X-Division,Y-Division if X,Y related parameter is calculated.");
+
+function measurement_guide() {
+  alert("Each division in CRO is 10 units.After taking the reading from the display multiply with the X-Division,Y-Division if X,Y related parameter is calculated.");
 }
